@@ -24,11 +24,9 @@ Explore well-documented implementations of popular data structures, including bu
 - Heaps
 - ... and more.
 
-Each data structure includes a dedicated folder with clear explanations, implementation details, and examples.
-
 ## Algorithms
 
-Discover a wide range of algorithms categorized by their use cases:
+Discover a wide range of algorithms and their use cases:
 
 - Sorting Algorithms (Bubble Sort, Merge Sort, QuickSort, etc.)
 - Searching Algorithms (Binary Search, Linear Search, etc.)
@@ -37,8 +35,6 @@ Discover a wide range of algorithms categorized by their use cases:
 - Divide and Conquer
 - Greedy Algorithms
 - ... and more.
-
-Just like the data structures, each algorithm comes with detailed explanations, implementations, and examples.
 
 ## Contributing
 
