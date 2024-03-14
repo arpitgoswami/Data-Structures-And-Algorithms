@@ -1,20 +1,17 @@
-class Solution(object):
-    def isValidSudoku(self, board):
-        res = []
-        for i in range(9):
-            for j in range(9):
-                element = board[i][j]
-                if element != '.':
-                    res += [(i, element), (element, j), (i // 3, j // 3, element)]
-        return len(res) == len(set(res))
+class Solution:
+    def numSubarraysWithSum(self, nums: list[int], goal: int) -> int:
+        res = {}
+        sum = 0
+        count = 0
         
+        for i in nums:
+            sum += i
+            if sum - goal in nums:
+                count += res(sum-goal)
+            res[i] = res.get(i, 0) + 1;
+        
+        return count
+
+                
 s = Solution()
-print(s.isValidSudoku([["8","3",".",".","7",".",".",".","."]
-,["6",".",".","1","9","5",".",".","."]
-,[".","9","8",".",".",".",".","6","."]
-,["8",".",".",".","6",".",".",".","3"]
-,["4",".",".","8",".","3",".",".","1"]
-,["7",".",".",".","2",".",".",".","6"]
-,[".","6",".",".",".",".","2","8","."]
-,[".",".",".","4","1","9",".",".","5"]
-,[".",".",".",".","8",".",".","7","9"]]))
+print(s.numSubarraysWithSum([1,0,1,0,1], 2))
