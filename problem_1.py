@@ -1,18 +1,13 @@
-class Solution:
-    def productExceptSelf(self, nums: list[int]) -> list[int]:
-        ans = [1] * len(nums)
-        product = 1
+class Solution(object):
+    def isValidSudoku(self, board):
         
-        for i in range(len(nums)):
-            ans[i] = product
-            product *= nums[i]
-            
-        product = 1
-        for i in range(len(nums)-1,-1,-1):
-            ans[i] *= product
-            product *= nums[i]
-        
-        return ans
+        res = []
+        for i in range(9):
+            for j in range(9):
+                element = board[i][j]
+                if element != '.':
+                    res += [(i, element), (element, j), (i // 3, j // 3, element)]
+        return len(res) == len(set(res))
 
 s = Solution()
-print(s.productExceptSelf([1,2,3,4]))
+print(s.findMaxLength([["5","3",".",".","7",".",".",".","."],["6",".",".","1","9","5",".",".","."],[".","9","8",".",".",".",".","6","."],["8",".",".",".","6",".",".",".","3"],["4",".",".","8",".","3",".",".","1"],["7",".",".",".","2",".",".",".","6"],[".","6",".",".",".",".","2","8","."],[".",".",".","4","1","9",".",".","5"],[".",".",".",".","8",".",".","7","9"]]))
