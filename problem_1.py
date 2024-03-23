@@ -1,13 +1,18 @@
 class Solution(object):
-    def isValidSudoku(self, board):
+    def maxProfit(self, prices):
+
+        l, r = 0, 1
+        maxP = 0
         
-        res = []
-        for i in range(9):
-            for j in range(9):
-                element = board[i][j]
-                if element != '.':
-                    res += [(i, element), (element, j), (i // 3, j // 3, element)]
-        return len(res) == len(set(res))
+        while r < len(prices):
+            if prices[l] < prices[r]:
+                profit = prices[r] - prices[l]
+                maxP = max(maxP, profit)
+            else:
+                l = r
+            r += 1
+
+        return maxP
 
 s = Solution()
-print(s.findMaxLength([["5","3",".",".","7",".",".",".","."],["6",".",".","1","9","5",".",".","."],[".","9","8",".",".",".",".","6","."],["8",".",".",".","6",".",".",".","3"],["4",".",".","8",".","3",".",".","1"],["7",".",".",".","2",".",".",".","6"],[".","6",".",".",".",".","2","8","."],[".",".",".","4","1","9",".",".","5"],[".",".",".",".","8",".",".","7","9"]]))
+print(s.maxProfit([7,1,5,3,6,4]))
